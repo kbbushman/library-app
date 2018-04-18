@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_18_040126) do
+ActiveRecord::Schema.define(version: 2018_04_18_061317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "libraries", force: :cascade do |t|
+    t.string "name"
+    t.integer "floor_count"
+    t.integer "floor_area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "library_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "library_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["library_id"], name: "index_library_users_on_library_id"
+    t.index ["user_id"], name: "index_library_users_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -24,4 +41,6 @@ ActiveRecord::Schema.define(version: 2018_04_18_040126) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "library_users", "libraries"
+  add_foreign_key "library_users", "users"
 end
