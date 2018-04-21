@@ -2,7 +2,6 @@ class LibrariesController < ApplicationController
   
   def index
     @libraries = Library.all
-    @members = LibraryUser.all.where.not({user_id: nil})
   end
 
   def show
