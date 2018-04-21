@@ -1,3 +1,11 @@
-<div>
-  Welcome, <%= @user.first_name %>!
+<div class="row">
+  <div class="col-md-5 py-4">
+    <div class="mb-5">
+      <h3 class="mb-4">Welcome, <%= @user.first_name %>!</h3>
+      <p><strong>Email:</strong> <%= @user.email %></p>
+      <p><strong>Joined On:</strong> <%= @user.created_at.strftime("%m/%d/%Y") %></p>
+      <p><strong>Last Updated:</strong> <%= time_ago_in_words(@user.updated_at )%> ago</p>
+      <%= link_to "My Library Memberships", user_libraries_path(@user), class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>

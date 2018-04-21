@@ -1,12 +1,19 @@
-<%= form_for @library do |f| %>
-  <div>
-    <%= f.text_field :name, placeholder: "Name" %>
+<div class="row">
+  <div class="col-md-4 offset-md-3">
+    <h1 class="mb-4">New Account</h1>
+
+    <%= form_for @library do |f| %>
+      <div>
+        <%= f.text_field :name, class: "form-control mb-2", placeholder: "Name", required: true %>
+      </div>
+      <div>
+        <%= f.number_field :floor_count, class: "form-control mb-2", placeholder: "Floor Count", required: true %>
+      </div>
+      <div>
+        <%= f.number_field :floor_area, class: "form-control mb-2", placeholder: "Floor Area", required: true %>
+      </div>
+      <%= f.submit class: "btn btn-primary float-right" %>
+    <% end %>
   </div>
-  <div>
-    <%= f.number_field :floor_count, placeholder: "Floor Count" %>
-  </div>
-  <div>
-    <%= f.number_field :floor_area, placeholder: "Floor Area" %>
-  </div>
-  <%= f.submit %>
-<% end %>
+</div>
+      
