@@ -1,24 +1,18 @@
-# README
+# Rails Library App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Technologies
 
-Things you may want to cover:
+The following technologies were used for this project:
 
-* Ruby version
+* Ruby
+* Rails
+* Bootstrap
 
-* System dependencies
+### Instructions
 
-* Configuration
+Download or clone this repo. From inside the project directory, open Terminal and run:
+```
+bundle install
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Happy Coding...!!!
