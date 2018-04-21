@@ -3,16 +3,16 @@
     <h1 class="mb-4">New Account</h1>
     <%= form_for @user do |f| %>
       <div>
-        <%= f.text_field :first_name, class: "form-control mb-2", placeholder: "First Name" %>
+        <%= f.text_field :first_name, class: "form-control mb-2", placeholder: "First Name", required: true %>
       </div>
       <div>
-        <%= f.text_field :last_name, class: "form-control mb-2", placeholder: "Last Name" %>
+        <%= f.text_field :last_name, class: "form-control mb-2", placeholder: "Last Name", required: true %>
       </div>
       <div>
-        <%= f.text_field :email, class: "form-control mb-2", placeholder: "Email" %>
+        <%= f.text_field :email, class: "form-control mb-2", placeholder: "Email", required: true %>
       </div>
       <div>
-        <%= f.password_field :password, class: "form-control mb-2", placeholder: "Password" %>
+        <%= f.password_field :password, class: "form-control mb-2", placeholder: "Password", required: true %>
       </div>
       <%= f.submit "Sign Up", class: "btn btn-info float-right" %>
     <% end %>

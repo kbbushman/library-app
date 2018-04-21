@@ -1,7 +1,10 @@
-<div><%= @user.first_name %> is a member of the following libraries</div>
-
-<ul>
-  <% @libraries.each do |lib| %>   
-    <li><%= lib.name %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-8 py-4">
+    <h3 class="mb-3"><%= @user.first_name %> is a member of the following libraries:</h3>
+    <ul>
+      <% @libraries.each do |lib| %>   
+        <li><%= link_to lib.name, library_path(lib) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
