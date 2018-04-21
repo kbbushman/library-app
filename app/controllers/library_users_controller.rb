@@ -12,4 +12,10 @@ class LibraryUsersController < ApplicationController
     redirect_to current_user
   end
 
+  def destroy
+    @library = Library.find(params[:library_id])
+    @library.users.delete(current_user)
+    redirect_to current_user
+  end
+
 end
