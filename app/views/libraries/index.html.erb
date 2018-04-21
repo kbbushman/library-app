@@ -10,8 +10,10 @@
     <% @libraries.each do |library| %>
       <div class="mb-5">
         <h3><%= link_to library.name, library_path(library) %></h3>
-        <% if current_user %>
+        <% if current_user && !library.users.member?(current_user) %>
           <%= button_to "Join", library_users_path(library), class: "btn btn-info" %>
+        <% elsif current_user && library.users.member?(current_user) %>
+          <p>(Member)</p>
         <% end %>
       </div>
     <% end %>
